@@ -10,12 +10,18 @@
 
 /** 昵称的字体 */
 #define IWStatusNameFont [UIFont systemFontOfSize:15]
+/** 被转发微博作者昵称的字体 */
+#define IWRetweetStatusNameFont IWStatusNameFont
+
 /** 时间的字体 */
 #define IWStatusTimeFont [UIFont systemFontOfSize:12]
 /** 来源的字体 */
 #define IWStatusSourceFont IWStatusTimeFont
-/** 中文的字体 */
+
+/** 正文的字体 */
 #define IWStatusContentFont [UIFont systemFontOfSize:13]
+/** 被转发微博正文的字体 */
+#define IWRetweetStatusContentFont IWStatusContentFont
 
 @class IWStatus;
 @interface IWStatusFrame : NSObject
