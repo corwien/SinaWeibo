@@ -27,6 +27,8 @@
 		0829D90719173CFB005E4B1D /* UIImage+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829D90619173CFB005E4B1D /* UIImage+MJ.m */; };
 		0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829D90919173FFE005E4B1D /* IWTabBar.m */; };
 		083E0BAC1918C2D20008EA6B /* IWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E0BAB1918C2D20008EA6B /* IWPageControl.m */; };
+		085052E1191C66AC006484D8 /* IWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E0191C66AC006484D8 /* IWStatusCell.m */; };
+		085052E4191C7A27006484D8 /* IWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E3191C7A27006484D8 /* IWStatusFrame.m */; };
 		0863B95A191B142700B6BA5F /* IWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B959191B142700B6BA5F /* IWOAuthViewController.m */; };
 		0863B970191B1DAC00B6BA5F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B95E191B1DAC00B6BA5F /* AFHTTPRequestOperation.m */; };
 		0863B971191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B960191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m */; };
@@ -120,6 +122,10 @@
 		0829D90919173FFE005E4B1D /* IWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTabBar.m; sourceTree = "<group>"; };
 		083E0BAA1918C2D20008EA6B /* IWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPageControl.h; sourceTree = "<group>"; };
 		083E0BAB1918C2D20008EA6B /* IWPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPageControl.m; sourceTree = "<group>"; };
+		085052DF191C66AC006484D8 /* IWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusCell.h; sourceTree = "<group>"; };
+		085052E0191C66AC006484D8 /* IWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusCell.m; sourceTree = "<group>"; };
+		085052E2191C7A27006484D8 /* IWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusFrame.h; sourceTree = "<group>"; };
+		085052E3191C7A27006484D8 /* IWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusFrame.m; sourceTree = "<group>"; };
 		0863B958191B142700B6BA5F /* IWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWOAuthViewController.h; sourceTree = "<group>"; };
 		0863B959191B142700B6BA5F /* IWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWOAuthViewController.m; sourceTree = "<group>"; };
 		0863B95D191B1DAC00B6BA5F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 			children = (
 				0863B9E5191B757900B6BA5F /* IWStatus.h */,
 				0863B9E6191B757900B6BA5F /* IWStatus.m */,
+				085052E2191C7A27006484D8 /* IWStatusFrame.h */,
+				085052E3191C7A27006484D8 /* IWStatusFrame.m */,
 				0863B9E8191B76DC00B6BA5F /* IWUser.h */,
 				0863B9E9191B76DC00B6BA5F /* IWUser.m */,
 			);
@@ -396,6 +404,8 @@
 			children = (
 				086E639719188CD200DDB83F /* IWTitleButton.h */,
 				086E639819188CD200DDB83F /* IWTitleButton.m */,
+				085052DF191C66AC006484D8 /* IWStatusCell.h */,
+				085052E0191C66AC006484D8 /* IWStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -818,6 +828,7 @@
 				0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */,
 				0863B974191B1DAC00B6BA5F /* AFSecurityPolicy.m in Sources */,
 				0863B9FF191B7C1D00B6BA5F /* MJArgument.m in Sources */,
+				085052E1191C66AC006484D8 /* IWStatusCell.m in Sources */,
 				0863B971191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m in Sources */,
 				0863B970191B1DAC00B6BA5F /* AFHTTPRequestOperation.m in Sources */,
 				0863BA07191B7C1D00B6BA5F /* NSObject+MJMember.m in Sources */,
@@ -869,6 +880,7 @@
 				086E639919188CD200DDB83F /* IWTitleButton.m in Sources */,
 				0863B9E4191B6E5B00B6BA5F /* UIImageView+WebCache.m in Sources */,
 				0863BA03191B7C1D00B6BA5F /* MJType.m in Sources */,
+				085052E4191C7A27006484D8 /* IWStatusFrame.m in Sources */,
 				0863B9D9191B6E5B00B6BA5F /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

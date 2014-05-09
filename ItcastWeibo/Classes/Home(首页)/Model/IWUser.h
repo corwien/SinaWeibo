@@ -21,11 +21,9 @@
  *  用户的头像
  */
 @property (nonatomic, copy) NSString *profile_image_url;
+
+/**
+ *  是否为vip
+ */
+@property (nonatomic, assign, getter = isVip) BOOL vip;
 @end
-/*
- {
-     "id": 1404376560,
-     "name": "zaku",
-     "profile_image_url": "http://tp1.sinaimg.cn/1404376560/50/0/1",
- }
-*/
