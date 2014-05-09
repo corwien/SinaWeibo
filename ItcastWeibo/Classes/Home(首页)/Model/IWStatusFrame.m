@@ -10,9 +10,6 @@
 #import "IWStatus.h"
 #import "IWUser.h"
 
-/** cell的边框宽度 */
-#define IWStatusCellBorder 5
-
 @implementation IWStatusFrame
 /**
  *  获得微博模型数据之后, 根据微博数据计算所有子控件的frame
@@ -22,7 +19,7 @@
     _status = status;
     
     // cell的宽度
-    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width - 2 * IWStatusTableBorder;
     
     // 1.topView
     CGFloat topViewW = cellW;
@@ -124,7 +121,14 @@
     topViewH += IWStatusCellBorder;
     _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
-    // 13.cell的高度
-    _cellHeight = topViewH;
+    // 13.工具条
+    CGFloat statusToolbarX = topViewX;
+    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);
+    CGFloat statusToolbarW = topViewW;
+    CGFloat statusToolbarH = 35;
+    _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
+    
+    // 14.cell的高度
+    _cellHeight = CGRectGetMaxY(_statusToolbarF) + IWStatusTableBorder;
 }
 @end

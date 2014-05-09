@@ -23,6 +23,12 @@
 /** 被转发微博正文的字体 */
 #define IWRetweetStatusContentFont IWStatusContentFont
 
+/** 表格的边框宽度 */
+#define IWStatusTableBorder 5
+
+/** cell的边框宽度 */
+#define IWStatusCellBorder 10
+
 @class IWStatus;
 @interface IWStatusFrame : NSObject
 @property (nonatomic, strong) IWStatus *status;

@@ -95,6 +95,9 @@
     titleButton.frame = CGRectMake(0, 0, 100, 40);
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    
+    self.tableView.backgroundColor = IWColor(226, 226, 226);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, IWStatusTableBorder, 0);
 }
 
 - (void)titleClick:(IWTitleButton *)titleButton
