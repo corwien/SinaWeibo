@@ -46,6 +46,5 @@
     source = [source substringWithRange:NSMakeRange(loc, length)];
     
     _source = [NSString stringWithFormat:@"来自%@", source];
-    NSLog(@"----setSource--%@", _source);
 }
 @end

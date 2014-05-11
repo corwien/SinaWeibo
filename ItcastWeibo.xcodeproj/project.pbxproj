@@ -76,6 +76,9 @@
 		086E6396191884C500DDB83F /* IWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 086E6395191884C500DDB83F /* IWSearchBar.m */; };
 		086E639919188CD200DDB83F /* IWTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 086E639819188CD200DDB83F /* IWTitleButton.m */; };
 		086E63A01918938100DDB83F /* IWNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 086E639F1918938100DDB83F /* IWNewfeatureViewController.m */; };
+		08AFD1AD191F069700F4A911 /* IWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1AC191F069700F4A911 /* IWStatusToolbar.m */; };
+		08AFD1B0191F1E2E00F4A911 /* IWReweetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */; };
+		08AFD1B3191F20BA00F4A911 /* IWStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */; };
 		08CE62781917724F002DA6BF /* IWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CE62771917724F002DA6BF /* IWTabBarButton.m */; };
 		08CE627B191788E1002DA6BF /* IWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CE627A191788E1002DA6BF /* IWBadgeButton.m */; };
 /* End PBXBuildFile section */
@@ -223,6 +226,12 @@
 		086E639819188CD200DDB83F /* IWTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTitleButton.m; sourceTree = "<group>"; };
 		086E639E1918938100DDB83F /* IWNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWNewfeatureViewController.h; sourceTree = "<group>"; };
 		086E639F1918938100DDB83F /* IWNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWNewfeatureViewController.m; sourceTree = "<group>"; };
+		08AFD1AB191F069700F4A911 /* IWStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusToolbar.h; sourceTree = "<group>"; };
+		08AFD1AC191F069700F4A911 /* IWStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusToolbar.m; sourceTree = "<group>"; };
+		08AFD1AE191F1E2E00F4A911 /* IWReweetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWReweetStatusView.h; sourceTree = "<group>"; };
+		08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWReweetStatusView.m; sourceTree = "<group>"; };
+		08AFD1B1191F20BA00F4A911 /* IWStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusTopView.h; sourceTree = "<group>"; };
+		08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusTopView.m; sourceTree = "<group>"; };
 		08CE62761917724F002DA6BF /* IWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWTabBarButton.h; sourceTree = "<group>"; };
 		08CE62771917724F002DA6BF /* IWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTabBarButton.m; sourceTree = "<group>"; };
 		08CE6279191788E1002DA6BF /* IWBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWBadgeButton.h; sourceTree = "<group>"; };
@@ -409,6 +418,12 @@
 				086E639819188CD200DDB83F /* IWTitleButton.m */,
 				085052DF191C66AC006484D8 /* IWStatusCell.h */,
 				085052E0191C66AC006484D8 /* IWStatusCell.m */,
+				08AFD1AB191F069700F4A911 /* IWStatusToolbar.h */,
+				08AFD1AC191F069700F4A911 /* IWStatusToolbar.m */,
+				08AFD1AE191F1E2E00F4A911 /* IWReweetStatusView.h */,
+				08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */,
+				08AFD1B1191F20BA00F4A911 /* IWStatusTopView.h */,
+				08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -831,6 +846,7 @@
 				086E63931918803100DDB83F /* UIBarButtonItem+MJ.m in Sources */,
 				0863B98A191B36AC00B6BA5F /* MBProgressHUD+MJ.m in Sources */,
 				0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */,
+				08AFD1AD191F069700F4A911 /* IWStatusToolbar.m in Sources */,
 				0863B974191B1DAC00B6BA5F /* AFSecurityPolicy.m in Sources */,
 				0863B9FF191B7C1D00B6BA5F /* MJArgument.m in Sources */,
 				085052E1191C66AC006484D8 /* IWStatusCell.m in Sources */,
@@ -875,6 +891,7 @@
 				0863B9EA191B76DC00B6BA5F /* IWUser.m in Sources */,
 				0863B977191B1DAC00B6BA5F /* AFURLResponseSerialization.m in Sources */,
 				0863B95A191B142700B6BA5F /* IWOAuthViewController.m in Sources */,
+				08AFD1B3191F20BA00F4A911 /* IWStatusTopView.m in Sources */,
 				0863B9D8191B6E5B00B6BA5F /* NSData+ImageContentType.m in Sources */,
 				0829D90019173977005E4B1D /* main.m in Sources */,
 				0863B9E3191B6E5B00B6BA5F /* UIImage+WebP.m in Sources */,
@@ -887,6 +904,7 @@
 				0863B9E4191B6E5B00B6BA5F /* UIImageView+WebCache.m in Sources */,
 				0863BA03191B7C1D00B6BA5F /* MJType.m in Sources */,
 				085052E4191C7A27006484D8 /* IWStatusFrame.m in Sources */,
+				08AFD1B0191F1E2E00F4A911 /* IWReweetStatusView.m in Sources */,
 				0863B9D9191B6E5B00B6BA5F /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
