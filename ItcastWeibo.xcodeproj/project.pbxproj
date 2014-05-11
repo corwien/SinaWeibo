@@ -79,6 +79,7 @@
 		08AFD1AD191F069700F4A911 /* IWStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1AC191F069700F4A911 /* IWStatusToolbar.m */; };
 		08AFD1B0191F1E2E00F4A911 /* IWReweetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */; };
 		08AFD1B3191F20BA00F4A911 /* IWStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */; };
+		08AFD1B6191F2B7600F4A911 /* IWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 08AFD1B5191F2B7600F4A911 /* IWPhoto.m */; };
 		08CE62781917724F002DA6BF /* IWTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CE62771917724F002DA6BF /* IWTabBarButton.m */; };
 		08CE627B191788E1002DA6BF /* IWBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CE627A191788E1002DA6BF /* IWBadgeButton.m */; };
 /* End PBXBuildFile section */
@@ -232,6 +233,8 @@
 		08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWReweetStatusView.m; sourceTree = "<group>"; };
 		08AFD1B1191F20BA00F4A911 /* IWStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusTopView.h; sourceTree = "<group>"; };
 		08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusTopView.m; sourceTree = "<group>"; };
+		08AFD1B4191F2B7600F4A911 /* IWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPhoto.h; sourceTree = "<group>"; };
+		08AFD1B5191F2B7600F4A911 /* IWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPhoto.m; sourceTree = "<group>"; };
 		08CE62761917724F002DA6BF /* IWTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWTabBarButton.h; sourceTree = "<group>"; };
 		08CE62771917724F002DA6BF /* IWTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTabBarButton.m; sourceTree = "<group>"; };
 		08CE6279191788E1002DA6BF /* IWBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWBadgeButton.h; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 				085052E3191C7A27006484D8 /* IWStatusFrame.m */,
 				0863B9E8191B76DC00B6BA5F /* IWUser.h */,
 				0863B9E9191B76DC00B6BA5F /* IWUser.m */,
+				08AFD1B4191F2B7600F4A911 /* IWPhoto.h */,
+				08AFD1B5191F2B7600F4A911 /* IWPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				0863B9E0191B6E5B00B6BA5F /* UIButton+WebCache.m in Sources */,
 				0829D8FE19173977005E4B1D /* IWMessageViewController.m in Sources */,
 				0863BA00191B7C1D00B6BA5F /* MJIvar.m in Sources */,
+				08AFD1B6191F2B7600F4A911 /* IWPhoto.m in Sources */,
 				0829D8FD19173977005E4B1D /* IWMeViewController.m in Sources */,
 				08CE62781917724F002DA6BF /* IWTabBarButton.m in Sources */,
 				0863B9E1191B6E5B00B6BA5F /* UIImage+GIF.m in Sources */,

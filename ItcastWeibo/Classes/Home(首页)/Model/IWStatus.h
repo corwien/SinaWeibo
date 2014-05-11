@@ -27,9 +27,10 @@
  */
 @property (nonatomic, copy) NSString *idstr;
 /**
- *  微博的单张配图
+ *  微博的配图(数组中装模型:IWPhoto)
  */
-@property (nonatomic, copy) NSString *thumbnail_pic;
+@property (nonatomic, strong) NSArray *pic_urls;
+//@property (nonatomic, copy) NSString *thumbnail_pic;
 
 /**
  *  微博的转发数

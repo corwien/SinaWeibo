@@ -12,6 +12,7 @@
 #import "IWUser.h"
 #import "IWReweetStatusView.h"
 #import "IWStatus.h"
+#import "IWPhoto.h"
 
 @interface IWStatusTopView()
 /** 头像 */
@@ -147,10 +148,11 @@
     self.contentLabel.frame = self.statusFrame.contentLabelF;
     
     // 8.配图
-    if (status.thumbnail_pic) {
+    if (status.pic_urls.count) {
         self.photoView.hidden = NO;
         self.photoView.frame = self.statusFrame.photoViewF;
-        [self.photoView setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        IWPhoto *photo = status.pic_urls[0];
+        [self.photoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
     } else {
         self.photoView.hidden = YES;
     }

@@ -55,6 +55,16 @@
           // 将字典数组转为模型数组(里面放的就是IWStatus模型)
           NSArray *statusArray = [IWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
           
+//          for (NSDictionary *dict in responseObject[@"statuses"]) {
+//              IWLog(@"%@", dict[@"pic_urls"]);
+//              //  dict[@"pic_urls"] ---> IWStatus.pic_urls
+          
+          
+          // @[ @{}, @{}, @{}] --->  @[模型, 模型, 模型]
+          
+//              //   里面装着字典 --->  里面装的是模型
+//          }
+          
           // 创建frame模型对象
           NSMutableArray *statusFrameArray = [NSMutableArray array];
           for (IWStatus *status in statusArray) {

@@ -8,8 +8,16 @@
 
 #import "IWStatus.h"
 #import "NSDate+MJ.h"
+#import "MJExtension.h"
+#import "IWPhoto.h"
 
 @implementation IWStatus
+
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls" : [IWPhoto class]};
+}
+
 - (NSString *)created_at
 {
     // _created_at == Fri May 09 16:30:34 +0800 2014

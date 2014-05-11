@@ -10,6 +10,7 @@
 #import "IWStatus.h"
 #import "IWUser.h"
 #import "IWStatusFrame.h"
+#import "IWPhoto.h"
 #import "UIImageView+WebCache.h"
 
 @interface IWReweetStatusView()
@@ -71,10 +72,13 @@
     self.retweetContentLabel.frame = self.statusFrame.retweetContentLabelF;
     
     // 3.配图
-    if (retweetStatus.thumbnail_pic) {
+    if (retweetStatus.pic_urls.count) {
         self.retweetPhotoView.hidden = NO;
         self.retweetPhotoView.frame = self.statusFrame.retweetPhotoViewF;
-        [self.retweetPhotoView setImageWithURL:[NSURL URLWithString:retweetStatus.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        
+        IWPhoto *photo = retweetStatus.pic_urls[0];
+        
+        [self.retweetPhotoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
     } else {
         self.retweetPhotoView.hidden = YES;
     }
