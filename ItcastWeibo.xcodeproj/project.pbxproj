@@ -29,6 +29,7 @@
 		083E0BAC1918C2D20008EA6B /* IWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E0BAB1918C2D20008EA6B /* IWPageControl.m */; };
 		085052E1191C66AC006484D8 /* IWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E0191C66AC006484D8 /* IWStatusCell.m */; };
 		085052E4191C7A27006484D8 /* IWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E3191C7A27006484D8 /* IWStatusFrame.m */; };
+		0857AB78191CCC5A00BB49B5 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0857AB77191CCC5A00BB49B5 /* NSDate+MJ.m */; };
 		0863B95A191B142700B6BA5F /* IWOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B959191B142700B6BA5F /* IWOAuthViewController.m */; };
 		0863B970191B1DAC00B6BA5F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B95E191B1DAC00B6BA5F /* AFHTTPRequestOperation.m */; };
 		0863B971191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0863B960191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m */; };
@@ -126,6 +127,8 @@
 		085052E0191C66AC006484D8 /* IWStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusCell.m; sourceTree = "<group>"; };
 		085052E2191C7A27006484D8 /* IWStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusFrame.h; sourceTree = "<group>"; };
 		085052E3191C7A27006484D8 /* IWStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusFrame.m; sourceTree = "<group>"; };
+		0857AB76191CCC5A00BB49B5 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
+		0857AB77191CCC5A00BB49B5 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 		0863B958191B142700B6BA5F /* IWOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWOAuthViewController.h; sourceTree = "<group>"; };
 		0863B959191B142700B6BA5F /* IWOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWOAuthViewController.m; sourceTree = "<group>"; };
 		0863B95D191B1DAC00B6BA5F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -323,8 +326,8 @@
 				0863B956191B141200B6BA5F /* OAuth(授权) */,
 				086E639A1918936200DDB83F /* Newfeature(新特性) */,
 				0829D8D719173977005E4B1D /* Discover(广场) */,
-				0829D8DD19173977005E4B1D /* Home(首页) */,
 				0829D8E319173977005E4B1D /* Main(主要) */,
+				0829D8DD19173977005E4B1D /* Home(首页) */,
 				0829D8E919173977005E4B1D /* Me(我) */,
 				0829D8EF19173977005E4B1D /* Message(消息) */,
 				0829D8F519173977005E4B1D /* Other(其他) */,
@@ -539,6 +542,8 @@
 				0829D90619173CFB005E4B1D /* UIImage+MJ.m */,
 				086E63911918803100DDB83F /* UIBarButtonItem+MJ.h */,
 				086E63921918803100DDB83F /* UIBarButtonItem+MJ.m */,
+				0857AB76191CCC5A00BB49B5 /* NSDate+MJ.h */,
+				0857AB77191CCC5A00BB49B5 /* NSDate+MJ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				0863B9DF191B6E5B00B6BA5F /* SDWebImagePrefetcher.m in Sources */,
 				0863B9E7191B757900B6BA5F /* IWStatus.m in Sources */,
 				0829D90719173CFB005E4B1D /* UIImage+MJ.m in Sources */,
+				0857AB78191CCC5A00BB49B5 /* NSDate+MJ.m in Sources */,
 				0829D8FF19173977005E4B1D /* IWAppDelegate.m in Sources */,
 				083E0BAC1918C2D20008EA6B /* IWPageControl.m in Sources */,
 				0863BA04191B7C1D00B6BA5F /* MJTypeEncoding.m in Sources */,

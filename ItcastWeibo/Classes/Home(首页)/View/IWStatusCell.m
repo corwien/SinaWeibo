@@ -77,15 +77,12 @@
 - (void)setupOriginalSubviews
 {
     // 0.设置cell选中时的背景
-#warning TODO
-//    UIImageView *bgView = [[UIImageView alloc] init];
-//    bgView.backgroundColor = [UIColor redColor];
-////    bgView.image = [UIImage resizedImageWithName:@"common_card_background_highlighted"];
-//    self.selectedBackgroundView = bgView;
+    self.selectedBackgroundView = [[UIView alloc] init];
     
     /** 1.顶部的view */
     UIImageView *topView = [[UIImageView alloc] init];
     topView.image = [UIImage resizedImageWithName:@"timeline_card_top_background"];
+    topView.highlightedImage = [UIImage resizedImageWithName:@"timeline_card_top_background_highlighted"];
     [self.contentView addSubview:topView];
     self.topView = topView;
     
@@ -96,6 +93,7 @@
     
     /** 3.会员图标 */
     UIImageView *vipView = [[UIImageView alloc] init];
+    vipView.contentMode = UIViewContentModeCenter;
     [self.topView addSubview:vipView];
     self.vipView = vipView;
     
@@ -179,6 +177,7 @@
     /** 1.微博的工具条 */
     UIImageView *statusToolbar = [[UIImageView alloc] init];
     statusToolbar.image = [UIImage resizedImageWithName:@"timeline_card_bottom_background"];
+    statusToolbar.highlightedImage = [UIImage resizedImageWithName:@"timeline_card_bottom_background_highlighted"];
     [self.contentView addSubview:statusToolbar];
     self.statusToolbar = statusToolbar;
 }
@@ -240,21 +239,31 @@
     self.nameLabel.frame = self.statusFrame.nameLabelF;
     
     // 4.vip
-    if (user.isVip) {
+    if (user.mbtype) {
         self.vipView.hidden = NO;
-        self.vipView.image = [UIImage imageWithName:@"common_icon_membership"];
+        self.vipView.image = [UIImage imageWithName:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]];
         self.vipView.frame = self.statusFrame.vipViewF;
+        
+        self.nameLabel.textColor = [UIColor orangeColor];
     } else {
+        self.nameLabel.textColor = [UIColor blackColor];
+        
         self.vipView.hidden = YES;
     }
     
     // 5.时间
     self.timeLabel.text = status.created_at;
-    self.timeLabel.frame = self.statusFrame.timeLabelF;
+    CGFloat timeLabelX = self.statusFrame.nameLabelF.origin.x;
+    CGFloat timeLabelY = CGRectGetMaxY(self.statusFrame.nameLabelF) + IWStatusCellBorder * 0.5;
+    CGSize timeLabelSize = [status.created_at sizeWithFont:IWStatusTimeFont];
+    self.timeLabel.frame = (CGRect){{timeLabelX, timeLabelY}, timeLabelSize};
     
     // 6.来源
     self.sourceLabel.text = status.source;
-    self.sourceLabel.frame = self.statusFrame.sourceLabelF;
+    CGFloat sourceLabelX = CGRectGetMaxX(self.timeLabel.frame) + IWStatusCellBorder;
+    CGFloat sourceLabelY = timeLabelY;
+    CGSize sourceLabelSize = [status.source sizeWithFont:IWStatusSourceFont];
+    self.sourceLabel.frame = (CGRect){{sourceLabelX, sourceLabelY}, sourceLabelSize};
     
     // 7.正文
     self.contentLabel.text = status.text;
@@ -284,7 +293,7 @@
         self.retweetView.frame = self.statusFrame.retweetViewF;
         
         // 2.昵称
-        self.retweetNameLabel.text = user.name;
+        self.retweetNameLabel.text = [NSString stringWithFormat:@"@%@", user.name];
         self.retweetNameLabel.frame = self.statusFrame.retweetNameLabelF;
         
         // 3.正文
