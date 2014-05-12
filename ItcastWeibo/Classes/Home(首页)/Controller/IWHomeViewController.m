@@ -19,8 +19,10 @@
 #import "IWStatusFrame.h"
 #import "MJExtension.h"
 #import "IWStatusCell.h"
+#import "IWUser.h"
 
 @interface IWHomeViewController ()
+@property (nonatomic, weak) IWTitleButton *titleButton;
 @property (nonatomic, strong) NSMutableArray *statusFrames;
 @end
 
@@ -43,6 +45,38 @@
     
     // 1.设置导航栏的内容
     [self setupNavBar];
+    
+    // 2.获得用户信息
+    [self setupUserData];
+}
+
+/**
+ *  获得用户信息
+ */
+- (void)setupUserData
+{
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [IWAccountTool account].access_token;
+    params[@"uid"] = @([IWAccountTool account].uid);
+    
+    // 3.发送请求
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         // 字典转模型
+         IWUser *user = [IWUser objectWithKeyValues:responseObject];
+         // 设置标题文字
+         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+         // 保存昵称
+         IWAccount *account = [IWAccountTool account];
+         account.name = user.name;
+         [IWAccountTool saveAccount:account];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+     }];
 }
 
 /**
@@ -74,7 +108,7 @@
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [IWAccountTool account].access_token;
-    params[@"count"] = @5;
+    params[@"count"] = @10;
     if (self.statusFrames.count) {
         IWStatusFrame *statusFrame = self.statusFrames[0];
         // 加载ID比since_id大的微博
@@ -110,10 +144,62 @@
          
          // 让刷新控件停止显示刷新状态
          [refreshControl endRefreshing];
+         
+         // 显示最新微博的数量(给用户一些友善的提示)
+         [self showNewStatusCount:statusFrameArray.count];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          // 让刷新控件停止显示刷新状态
          [refreshControl endRefreshing];
      }];
+}
+
+/**
+ *  显示最新微博的数量
+ *
+ *  @param count 最新微博的数量
+ */
+- (void)showNewStatusCount:(int)count
+{
+    // 1.创建一个按钮
+    UIButton *btn = [[UIButton alloc] init];
+    // below : 下面  btn会显示在self.navigationController.navigationBar的下面
+    [self.navigationController.view insertSubview:btn belowSubview:self.navigationController.navigationBar];
+    
+    // 2.设置图片和文字
+    btn.userInteractionEnabled = NO;
+    [btn setBackgroundImage:[UIImage resizedImageWithName:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    if (count) {
+        NSString *title = [NSString stringWithFormat:@"共有%d条新的微博", count];
+        [btn setTitle:title forState:UIControlStateNormal];
+    } else {
+        [btn setTitle:@"没有新的微博数据" forState:UIControlStateNormal];
+    }
+    
+    // 3.设置按钮的初始frame
+    CGFloat btnH = 30;
+    CGFloat btnY = 64 - btnH;
+    CGFloat btnX = 2;
+    CGFloat btnW = self.view.frame.size.width - 2 * btnX;
+    btn.frame = CGRectMake(btnX, btnY, btnW, btnH);
+    
+    // 4.通过动画移动按钮(按钮向下移动 btnH + 1)
+    [UIView animateWithDuration:0.7 animations:^{
+        
+        btn.transform = CGAffineTransformMakeTranslation(0, btnH + 2);
+        
+    } completion:^(BOOL finished) { // 向下移动的动画执行完毕后
+        
+        // 建议:尽量使用animateWithDuration, 不要使用animateKeyframesWithDuration
+        [UIView animateWithDuration:0.7 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            btn.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            // 将btn从内存中移除
+            [btn removeFromSuperview];
+        }];
+        
+    }];
 }
 
 /**
@@ -131,12 +217,17 @@
     IWTitleButton *titleButton = [IWTitleButton titleButton];
     // 图标
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    // 文字
-    [titleButton setTitle:@"哈哈哈哈" forState:UIControlStateNormal];
     // 位置和尺寸
-    titleButton.frame = CGRectMake(0, 0, 100, 40);
+    titleButton.frame = CGRectMake(0, 0, 0, 40);
+    // 文字
+    if ([IWAccountTool account].name) {
+        [titleButton setTitle:[IWAccountTool account].name forState:UIControlStateNormal];
+    } else {
+        [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    }
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    self.titleButton = titleButton;
     
     self.tableView.backgroundColor = IWColor(226, 226, 226);
 //    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, IWStatusTableBorder, 0);
@@ -185,5 +276,4 @@
     IWStatusFrame *statusFrame = self.statusFrames[indexPath.row];
     return statusFrame.cellHeight;
 }
-
 @end

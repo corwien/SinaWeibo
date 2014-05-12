@@ -16,6 +16,11 @@
 @property (nonatomic, assign) long long remind_in;
 @property (nonatomic, assign) long long uid;
 
+/**
+ *  用户昵称
+ */
+@property (nonatomic, copy) NSString *name;
+
 
 + (instancetype)accountWithDict:(NSDictionary *)dict;
 - (instancetype)initWithDict:(NSDictionary *)dict;
