@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0825CA3B191F5E690013C81A /* IWPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825CA3A191F5E690013C81A /* IWPhotosView.m */; };
+		0825CA3E191F73EA0013C81A /* IWPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0825CA3D191F73EA0013C81A /* IWPhotoView.m */; };
 		0829D89619172DBE005E4B1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0829D89519172DBE005E4B1D /* Foundation.framework */; };
 		0829D89819172DBE005E4B1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0829D89719172DBE005E4B1D /* CoreGraphics.framework */; };
 		0829D89A19172DBE005E4B1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0829D89919172DBE005E4B1D /* UIKit.framework */; };
@@ -95,6 +97,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0825CA39191F5E690013C81A /* IWPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPhotosView.h; sourceTree = "<group>"; };
+		0825CA3A191F5E690013C81A /* IWPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPhotosView.m; sourceTree = "<group>"; };
+		0825CA3C191F73EA0013C81A /* IWPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPhotoView.h; sourceTree = "<group>"; };
+		0825CA3D191F73EA0013C81A /* IWPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPhotoView.m; sourceTree = "<group>"; };
 		0829D89219172DBE005E4B1D /* ItcastWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItcastWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0829D89519172DBE005E4B1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0829D89719172DBE005E4B1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -429,6 +435,10 @@
 				08AFD1AF191F1E2E00F4A911 /* IWReweetStatusView.m */,
 				08AFD1B1191F20BA00F4A911 /* IWStatusTopView.h */,
 				08AFD1B2191F20BA00F4A911 /* IWStatusTopView.m */,
+				0825CA39191F5E690013C81A /* IWPhotosView.h */,
+				0825CA3A191F5E690013C81A /* IWPhotosView.m */,
+				0825CA3C191F73EA0013C81A /* IWPhotoView.h */,
+				0825CA3D191F73EA0013C81A /* IWPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -873,6 +883,7 @@
 				0829D8FF19173977005E4B1D /* IWAppDelegate.m in Sources */,
 				083E0BAC1918C2D20008EA6B /* IWPageControl.m in Sources */,
 				0863BA04191B7C1D00B6BA5F /* MJTypeEncoding.m in Sources */,
+				0825CA3E191F73EA0013C81A /* IWPhotoView.m in Sources */,
 				0863BA01191B7C1D00B6BA5F /* MJMember.m in Sources */,
 				0863B9DA191B6E5B00B6BA5F /* SDWebImageCompat.m in Sources */,
 				0863B9DC191B6E5B00B6BA5F /* SDWebImageDownloader.m in Sources */,
@@ -906,6 +917,7 @@
 				0829D8FB19173977005E4B1D /* IWHomeViewController.m in Sources */,
 				086E6396191884C500DDB83F /* IWSearchBar.m in Sources */,
 				0863B973191B1DAC00B6BA5F /* AFNetworkReachabilityManager.m in Sources */,
+				0825CA3B191F5E690013C81A /* IWPhotosView.m in Sources */,
 				086E639919188CD200DDB83F /* IWTitleButton.m in Sources */,
 				0863B9E4191B6E5B00B6BA5F /* UIImageView+WebCache.m in Sources */,
 				0863BA03191B7C1D00B6BA5F /* MJType.m in Sources */,

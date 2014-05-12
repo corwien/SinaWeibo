@@ -54,20 +54,16 @@
       success:^(AFHTTPRequestOperation *operation, id responseObject) {
           // 将字典数组转为模型数组(里面放的就是IWStatus模型)
           NSArray *statusArray = [IWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-          
-//          for (NSDictionary *dict in responseObject[@"statuses"]) {
-//              IWLog(@"%@", dict[@"pic_urls"]);
-//              //  dict[@"pic_urls"] ---> IWStatus.pic_urls
-          
-          
-          // @[ @{}, @{}, @{}] --->  @[模型, 模型, 模型]
-          
-//              //   里面装着字典 --->  里面装的是模型
-//          }
-          
           // 创建frame模型对象
           NSMutableArray *statusFrameArray = [NSMutableArray array];
           for (IWStatus *status in statusArray) {
+//              if (status.pic_urls.count == 9) {
+//                  NSMutableArray *tempArray = [NSMutableArray array];
+//                  for (int i = 0; i<4; i++) {
+//                      [tempArray addObject:status.pic_urls[i]];
+//                  }
+//                  status.pic_urls = tempArray;
+//              }
               IWStatusFrame *statusFrame = [[IWStatusFrame alloc] init];
               // 传递微博模型数据
               statusFrame.status = status;

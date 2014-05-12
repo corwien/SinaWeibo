@@ -9,8 +9,10 @@
 #import "IWStatusFrame.h"
 #import "IWStatus.h"
 #import "IWUser.h"
+#import "IWPhotosView.h"
 
 @implementation IWStatusFrame
+
 /**
  *  获得微博模型数据之后, 根据微博数据计算所有子控件的frame
  */
@@ -69,10 +71,11 @@
     
     // 8.配图
     if (status.pic_urls.count) {
-        CGFloat photoViewWH = 70;
-        CGFloat photoViewX = contentLabelX;
-        CGFloat photoViewY = CGRectGetMaxY(_contentLabelF) + IWStatusCellBorder;
-        _photoViewF = CGRectMake(photoViewX, photoViewY, photoViewWH, photoViewWH);
+#warning 根据图片个数计算整个相册的尺寸
+        CGSize photosViewSize = [IWPhotosView photosViewSizeWithPhotosCount:status.pic_urls.count];
+        CGFloat photosViewX = contentLabelX;
+        CGFloat photosViewY = CGRectGetMaxY(_contentLabelF) + IWStatusCellBorder;
+        _photosViewF = CGRectMake(photosViewX, photosViewY, photosViewSize.width, photosViewSize.height);
     }
     
     // 9.被转发微博
@@ -98,23 +101,24 @@
         
         // 12.被转发微博的配图
         if(status.retweeted_status.pic_urls.count) {
-            CGFloat retweetPhotoViewWH = 70;
-            CGFloat retweetPhotoViewX = retweetContentLabelX;
-            CGFloat retweetPhotoViewY = CGRectGetMaxY(_retweetContentLabelF) + IWStatusCellBorder;
-            _retweetPhotoViewF = CGRectMake(retweetPhotoViewX, retweetPhotoViewY, retweetPhotoViewWH, retweetPhotoViewWH);
+#warning 根据图片个数计算整个相册的尺寸
+            CGSize retweetPhotosViewSize = [IWPhotosView photosViewSizeWithPhotosCount:status.retweeted_status.pic_urls.count];
+            CGFloat retweetPhotosViewX = retweetContentLabelX;
+            CGFloat retweetPhotosViewY = CGRectGetMaxY(_retweetContentLabelF) + IWStatusCellBorder;
+            _retweetPhotosViewF = CGRectMake(retweetPhotosViewX, retweetPhotosViewY, retweetPhotosViewSize.width, retweetPhotosViewSize.height);
             
-            retweetViewH = CGRectGetMaxY(_retweetPhotoViewF);
+            retweetViewH = CGRectGetMaxY(_retweetPhotosViewF);
         } else { // 没有配图
             retweetViewH = CGRectGetMaxY(_retweetContentLabelF);
         }
         retweetViewH += IWStatusCellBorder;
         _retweetViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
-        
+         
         // 有转发微博时topViewH
         topViewH = CGRectGetMaxY(_retweetViewF);
     } else { // 没有转发微博
         if (status.pic_urls.count) { // 有图
-            topViewH = CGRectGetMaxY(_photoViewF);
+            topViewH = CGRectGetMaxY(_photosViewF);
         } else { // 无图
             topViewH = CGRectGetMaxY(_contentLabelF);
         }

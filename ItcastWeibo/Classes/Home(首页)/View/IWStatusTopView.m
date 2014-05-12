@@ -12,6 +12,7 @@
 #import "IWUser.h"
 #import "IWReweetStatusView.h"
 #import "IWStatus.h"
+#import "IWPhotosView.h"
 #import "IWPhoto.h"
 
 @interface IWStatusTopView()
@@ -20,7 +21,7 @@
 /** 会员图标 */
 @property (nonatomic, weak) UIImageView *vipView;
 /** 配图 */
-@property (nonatomic, weak) UIImageView *photoView;
+@property (nonatomic, weak) IWPhotosView *photosView;
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 时间 */
@@ -56,9 +57,9 @@
         self.vipView = vipView;
         
         /** 4.配图 */
-        UIImageView *photoView = [[UIImageView alloc] init];
-        [self addSubview:photoView];
-        self.photoView = photoView;
+        IWPhotosView *photosView = [[IWPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
         
         /** 5.昵称 */
         UILabel *nameLabel = [[UILabel alloc] init];
@@ -149,12 +150,11 @@
     
     // 8.配图
     if (status.pic_urls.count) {
-        self.photoView.hidden = NO;
-        self.photoView.frame = self.statusFrame.photoViewF;
-        IWPhoto *photo = status.pic_urls[0];
-        [self.photoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.photosView.hidden = NO;
+        self.photosView.frame = self.statusFrame.photosViewF;
+        self.photosView.photos = status.pic_urls;
     } else {
-        self.photoView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     
     // 9.被转发微博
