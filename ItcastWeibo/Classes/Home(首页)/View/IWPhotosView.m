@@ -11,7 +11,6 @@
 #import "IWPhotoView.h"
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
-//#import "DXAlertView.h"
 
 #define IWPhotoW 70
 #define IWPhotoH 70
@@ -37,9 +36,6 @@
 
 - (void)photoTap:(UITapGestureRecognizer *)recognizer
 {
-//    DXAlertView *alertView = [[DXAlertView alloc] initWithTitle:@"哈哈" contentText:@"废话速度快回家繁华的时刻分开后" leftButtonTitle:@"确定" rightButtonTitle:@"取消"];
-//    [alertView show];
-//    
     int count = self.photos.count;
     
     // 1.封装图片数据
