@@ -104,6 +104,7 @@
     
     self.tableView.backgroundColor = IWColor(226, 226, 226);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, IWStatusTableBorder, 0);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)titleClick:(IWTitleButton *)titleButton

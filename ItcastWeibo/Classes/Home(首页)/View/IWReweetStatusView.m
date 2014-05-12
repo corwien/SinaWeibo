@@ -30,6 +30,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // 1.设置图片
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImageWithName:@"timeline_retweet_background" left:0.9 top:0.5];
         
         /** 2.被转发微博作者的昵称 */
