@@ -24,6 +24,8 @@
     // 1.获得微博的发送时间
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+#warning 真机调试下, 必须加上这段
+    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     NSDate *createdDate = [fmt dateFromString:_created_at];
     
     // 2..判断微博发送时间 和 现在时间 的差距

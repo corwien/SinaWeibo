@@ -64,7 +64,12 @@
         UIImageView *imageView = [[UIImageView alloc] init];
         
         // 设置图片
-        NSString *name = [NSString stringWithFormat:@"new_feature_%d", index + 1];
+        NSString *name = nil;
+        if (fourInch) { // 4inch
+            name = [NSString stringWithFormat:@"new_feature_%d-568h", index + 1];
+        } else {
+            name = [NSString stringWithFormat:@"new_feature_%d", index + 1];
+        }
         imageView.image = [UIImage imageWithName:name];
         
         // 设置frame

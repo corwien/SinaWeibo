@@ -42,7 +42,7 @@
     _nameLabelF = (CGRect){{nameLabelX, nameLabelY}, nameLabelSize};
 
     // 4.会员图标
-    if (status.user.mbtype) {
+    if (status.user.mbtype > 2) {
         CGFloat vipViewW = 14;
         CGFloat vipViewH = nameLabelSize.height;
         CGFloat vipViewX = CGRectGetMaxX(_nameLabelF) + IWStatusCellBorder;

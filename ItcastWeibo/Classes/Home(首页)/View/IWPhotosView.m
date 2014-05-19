@@ -12,10 +12,6 @@
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 
-#define IWPhotoW 70
-#define IWPhotoH 70
-#define IWPhotoMargin 10
-
 @implementation IWPhotosView
 
 - (id)initWithFrame:(CGRect)frame

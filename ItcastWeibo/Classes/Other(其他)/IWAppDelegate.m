@@ -11,6 +11,7 @@
 #import "IWAccount.h"
 #import "IWWeiboTool.h"
 #import "IWAccountTool.h"
+#import "IWNewfeatureViewController.h"
 
 @implementation IWAppDelegate
 

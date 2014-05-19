@@ -30,7 +30,7 @@
     [self.view addSubview:webView];
     
     // 2.加载授权页面(新浪提供的登录页面)
-    NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=1359433872&redirect_uri=http://ios.itcast.cn"];
+    NSURL *url = [NSURL URLWithString:IWLoginURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
 }
@@ -85,6 +85,9 @@
         
         // 5.发送POST请求给新浪,  通过code换取一个accessToken
         [self accessTokenWithCode:code];
+        
+        // 不加载这个请求
+        return NO;
     }
     
     return YES;
@@ -102,11 +105,11 @@
     
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"client_id"] = @"1359433872";
-    params[@"client_secret"] = @"37c372aa97a9329fc561947151c1bd38";
+    params[@"client_id"] = IWAppKey;
+    params[@"client_secret"] = IWAppSecret;
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
-    params[@"redirect_uri"] = @"http://ios.itcast.cn";
+    params[@"redirect_uri"] = IWRedirectURI;
     
     // 3.发送请求
     [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params

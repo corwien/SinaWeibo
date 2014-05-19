@@ -9,13 +9,6 @@
       "idiom" : "universal",
       "scale" : "2x",
       "filename" : "new_feature_3@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "new_feature_3-568h@2x.png",
-      "unassigned" : true,
-      "subtype" : "retina4",
-      "scale" : "2x"
     }
   ],
   "info" : {
