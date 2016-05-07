@@ -36,6 +36,8 @@
 		0829D90019173977005E4B1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829D8F919173977005E4B1D /* main.m */; };
 		0829D90719173CFB005E4B1D /* UIImage+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829D90619173CFB005E4B1D /* UIImage+MJ.m */; };
 		0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0829D90919173FFE005E4B1D /* IWTabBar.m */; };
+		082BF403192996750034484F /* IWComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082BF402192996750034484F /* IWComposeViewController.m */; };
+		082BF407192998FE0034484F /* IWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 082BF406192998FE0034484F /* IWTextView.m */; };
 		083E0BAC1918C2D20008EA6B /* IWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 083E0BAB1918C2D20008EA6B /* IWPageControl.m */; };
 		085052E1191C66AC006484D8 /* IWStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E0191C66AC006484D8 /* IWStatusCell.m */; };
 		085052E4191C7A27006484D8 /* IWStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 085052E3191C7A27006484D8 /* IWStatusFrame.m */; };
@@ -176,6 +178,10 @@
 		0829D90619173CFB005E4B1D /* UIImage+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MJ.m"; sourceTree = "<group>"; };
 		0829D90819173FFE005E4B1D /* IWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWTabBar.h; sourceTree = "<group>"; };
 		0829D90919173FFE005E4B1D /* IWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTabBar.m; sourceTree = "<group>"; };
+		082BF401192996750034484F /* IWComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWComposeViewController.h; sourceTree = "<group>"; };
+		082BF402192996750034484F /* IWComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWComposeViewController.m; sourceTree = "<group>"; };
+		082BF405192998FE0034484F /* IWTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWTextView.h; sourceTree = "<group>"; };
+		082BF406192998FE0034484F /* IWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTextView.m; sourceTree = "<group>"; };
 		083E0BAA1918C2D20008EA6B /* IWPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPageControl.h; sourceTree = "<group>"; };
 		083E0BAB1918C2D20008EA6B /* IWPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPageControl.m; sourceTree = "<group>"; };
 		085052DF191C66AC006484D8 /* IWStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusCell.h; sourceTree = "<group>"; };
@@ -435,6 +441,7 @@
 		0829D8D619173977005E4B1D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				082BF3FF192996630034484F /* Compose(发微博) */,
 				0863B956191B141200B6BA5F /* OAuth(授权) */,
 				086E639A1918936200DDB83F /* Newfeature(新特性) */,
 				0829D8D719173977005E4B1D /* Discover(广场) */,
@@ -671,6 +678,33 @@
 				0857AB77191CCC5A00BB49B5 /* NSDate+MJ.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		082BF3FF192996630034484F /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				082BF404192998F00034484F /* View */,
+				082BF400192996630034484F /* Controller */,
+			);
+			path = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		082BF400192996630034484F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				082BF401192996750034484F /* IWComposeViewController.h */,
+				082BF402192996750034484F /* IWComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		082BF404192998F00034484F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				082BF405192998FE0034484F /* IWTextView.h */,
+				082BF406192998FE0034484F /* IWTextView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0863B956191B141200B6BA5F /* OAuth(授权) */ = {
@@ -997,6 +1031,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086E63931918803100DDB83F /* UIBarButtonItem+MJ.m in Sources */,
+				082BF407192998FE0034484F /* IWTextView.m in Sources */,
 				0863B98A191B36AC00B6BA5F /* MBProgressHUD+MJ.m in Sources */,
 				08F5B3111920B1350078735A /* MJRefreshHeaderView.m in Sources */,
 				0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */,
@@ -1041,6 +1076,7 @@
 				08CE627B191788E1002DA6BF /* IWBadgeButton.m in Sources */,
 				0863B975191B1DAC00B6BA5F /* AFURLConnectionOperation.m in Sources */,
 				0863B97F191B2EB100B6BA5F /* IWWeiboTool.m in Sources */,
+				082BF403192996750034484F /* IWComposeViewController.m in Sources */,
 				080883E519205BD900A6840F /* MJPhotoProgressView.m in Sources */,
 				0863B976191B1DAC00B6BA5F /* AFURLRequestSerialization.m in Sources */,
 				0863B978191B1DAC00B6BA5F /* AFURLSessionManager.m in Sources */,
@@ -1325,6 +1361,7 @@
 				08FD206E1924696B004EFDB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,7 @@
 #import "IWNavigationController.h"
 #import "UIImage+MJ.h"
 #import "IWTabBar.h"
+#import "IWComposeViewController.h"
 
 @interface IWTabBarViewController () <IWTabBarDelegate>
 /**
@@ -59,6 +60,7 @@
     self.customTabBar = customTabBar;
 }
 
+#pragma mark - tabbar的代理方法
 /**
  *  监听tabbar按钮的改变
  *  @param from   原来选中的位置
@@ -67,6 +69,16 @@
 - (void)tabBar:(IWTabBar *)tabBar didSelectedButtonFrom:(int)from to:(int)to
 {
     self.selectedIndex = to;
+}
+
+/**
+ *  监听加号按钮点击
+ */
+- (void)tabBarDidClickedPlusButton:(IWTabBar *)tabBar
+{
+    IWComposeViewController *compose = [[IWComposeViewController alloc] init];
+    IWNavigationController *nav = [[IWNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 /**
