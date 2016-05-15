@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043B2D1A1CE80DB9002D0EB2 /* IWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B2D191CE80DB9002D0EB2 /* IWComposeToolbar.m */; };
 		080883E119205BD900A6840F /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 080883D519205BD900A6840F /* MJPhoto.m */; };
 		080883E219205BD900A6840F /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 080883D619205BD900A6840F /* MJPhotoBrowser.bundle */; };
 		080883E319205BD900A6840F /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 080883D819205BD900A6840F /* MJPhotoBrowser.m */; };
@@ -129,6 +130,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		043B2D181CE80DB9002D0EB2 /* IWComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWComposeToolbar.h; sourceTree = "<group>"; };
+		043B2D191CE80DB9002D0EB2 /* IWComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWComposeToolbar.m; sourceTree = "<group>"; };
 		080883D419205BD900A6840F /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		080883D519205BD900A6840F /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
 		080883D619205BD900A6840F /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
@@ -703,6 +706,8 @@
 			children = (
 				082BF405192998FE0034484F /* IWTextView.h */,
 				082BF406192998FE0034484F /* IWTextView.m */,
+				043B2D181CE80DB9002D0EB2 /* IWComposeToolbar.h */,
+				043B2D191CE80DB9002D0EB2 /* IWComposeToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1068,6 +1073,7 @@
 				0863B9DB191B6E5B00B6BA5F /* SDWebImageDecoder.m in Sources */,
 				0863B9DE191B6E5B00B6BA5F /* SDWebImageManager.m in Sources */,
 				080883E119205BD900A6840F /* MJPhoto.m in Sources */,
+				043B2D1A1CE80DB9002D0EB2 /* IWComposeToolbar.m in Sources */,
 				0829D8FC19173977005E4B1D /* IWTabBarViewController.m in Sources */,
 				086E63901918724500DDB83F /* IWNavigationController.m in Sources */,
 				0863B98C191B36AC00B6BA5F /* MBProgressHUD.m in Sources */,

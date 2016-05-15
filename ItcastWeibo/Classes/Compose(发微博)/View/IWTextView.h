@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface IWTextView : UITextView
+@property (nonatomic, copy)NSString *placeholder;
+@property (nonatomic, strong)UIColor *placeholderColor;
+
 
 @end
