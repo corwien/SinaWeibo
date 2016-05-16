@@ -22,6 +22,7 @@
 
 @interface IWComposeViewController ()<UITextViewDelegate>
 @property (nonatomic, weak) IWTextView *textView;
+@property (nonatomic, weak)IWComposeToolbar *toolbar;
 @end
 
 @implementation IWComposeViewController
@@ -37,7 +38,7 @@
     // 添加textView
     [self setupTextView];
     
-    // 添加toolbar
+    // 添加toolbar ****===***
     [self setupToolbar];
 }
 
@@ -54,14 +55,15 @@
     CGFloat toolbarH = 44;
     CGFloat toolbarW = self.view.frame.size.width;  // 宽度为view的宽度
     CGFloat toolbarX = 0;   // 位置，在最左边
-    CGFloat toolbarY = self.view.frame.size.height; // 无键盘时的toolbar高度
+    CGFloat toolbarY = self.view.frame.size.height - toolbarH; // 无键盘时的toolbar高度
     toolbar.frame = CGRectMake(toolbarX, toolbarY, toolbarW, toolbarH);
-    
-    NSLog(@"toolbar...");
     
     // toolbar的父控件是textview还是控制器？经过分析新浪微博的toolbar，当键盘消失时，toolbar永远在view的最底部
     // 所以，我们确定其父控件为控制器
     [self.view addSubview:toolbar];
+    
+    // 赋值属性
+    self.toolbar = toolbar;
     
 }
 
@@ -90,6 +92,42 @@
     
     // 2.监听textView文字改变的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
+    
+    // 3.监听键盘,当键盘frame改变时（键盘的Y值会变化,键盘的显示、隐藏），做出相应的操作===*****=======
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+/**
+ * 键盘出现的时候调用
+ *@param note
+ */
+-(void)keyboardWillShow:(NSNotification *)note
+{
+    IWLog(@"keyboardWillShow---%@", note.userInfo);
+    
+    // 1.获取键盘的frame，从字典里取出来的为对象，还需要转CGRectValue
+    CGRect keyboardF = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    // 2.取出键盘弹出的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 3.执行动画
+    [UIView animateWithDuration:duration animations:^{
+        self.toolbar.transform = CGAffineTransformMakeTranslation(0, -keyboardF.size.height);
+        
+    }];
+    }
+
+
+/**
+ * 键盘即将退出的时候调用
+ *@param note
+ */
+-(void)keyboardWillHide:(NSNotification *)note
+{
+    IWLog(@"keyboardWillHide---%@", note.userInfo);
 }
 
 // 编辑框可以上下滚动

@@ -16,10 +16,11 @@
     if (self) {
         
         // 设置工具条背景图片，平铺
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithName:@"compose_toolbar_background"]];
-        NSLog(@"compose_toolbar_background");
+      self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithName:@"compose_toolbar_background"]];
+       // self.backgroundColor = [UIColor redColor];
     }
     return self;
+    //
 }
 
 
