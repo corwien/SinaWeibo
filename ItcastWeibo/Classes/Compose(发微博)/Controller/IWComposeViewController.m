@@ -20,9 +20,10 @@
 #import "IWComposeToolbar.h"
 
 
-@interface IWComposeViewController ()<UITextViewDelegate>
+@interface IWComposeViewController ()<UITextViewDelegate,IWComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) IWTextView *textView;
 @property (nonatomic, weak)IWComposeToolbar *toolbar;
+@property (nonatomic, weak)UIImageView *imageView;
 @end
 
 @implementation IWComposeViewController
@@ -40,9 +41,92 @@
     
     // 添加toolbar ****===***
     [self setupToolbar];
+    
+    // 添加imageView (初始化）
+    [self setupImageView];
+}
+
+/**
+ *  添加imageView
+ */
+-(void)setupImageView
+{
+    UIImageView *imageView = [[UIImageView alloc] init];
+    
+    // 设置frame
+    /*
+    CGFloat imageViewH = 44;
+    CGFloat imageViewW = self.view.frame.size.width;  // 宽度为view的宽度
+    CGFloat imageViewX = 0;   // 位置，在最左边
+    CGFloat imageViewY = self.view.frame.size.height;
+    imageView.frame = CGRectMake(imageViewX, imageViewY, imageViewW, imageViewH);
+    */
+    // toolbar的父控件是textview还是控制器？经过分析新浪微博的toolbar，当键盘消失时，toolbar永远在view的最底部
+    // 所以，我们确定其父控件为控制器
+     imageView.frame = CGRectMake(5, 80, 60, 60);
+    [self.textView addSubview:imageView];
+    
+    // 赋值属性
+    self.imageView = imageView;
+    
+}
+
+#pragma mark - toolbar的代理方法
+- (void)composeToolbar:(IWComposeToolbar *)toolbar didClickedButton:(IWComposeToolbarButtonType)buttonType
+{
+    switch (buttonType) {
+        case IWComposeToolbarButtonTypeCamera: // 相机
+            [self openCamera];
+            break;
+            
+        case IWComposeToolbarButtonTypePicture: // 相册
+            NSLog(@"jinqule");
+            [self openPhotoLibarary];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+/**
+ *  打开相机
+ */
+- (void)openCamera
+{
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
 }
 
 
+/**
+ *  打开相册
+ */
+-(void)openPhotoLibarary{
+    NSLog(@"打开相册");
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+/**
+ * 图片选择控制器的代理
+ */
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // 1.销毁picker控制器
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2.获取到的图片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // 3.把用户选择的图片显示在发微博编辑框内
+    self.imageView.image = image;
+    NSLog(@"%@", info);
+}
 
 /**
  *  添加Toolbar
@@ -50,6 +134,7 @@
 -(void)setupToolbar
 {
     IWComposeToolbar *toolbar = [[IWComposeToolbar alloc] init];
+    toolbar.delegate = self;  // 点击打开图片库的按钮[2016-05-26 00:45 ADD]
     
     // 设置frame
     CGFloat toolbarH = 44;
@@ -105,7 +190,7 @@
  */
 -(void)keyboardWillShow:(NSNotification *)note
 {
-    IWLog(@"keyboardWillShow---%@", note.userInfo);
+   // IWLog(@"keyboardWillShow---%@", note.userInfo);
     
     // 1.获取键盘的frame，从字典里取出来的为对象，还需要转CGRectValue
     CGRect keyboardF = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -118,7 +203,7 @@
         self.toolbar.transform = CGAffineTransformMakeTranslation(0, -keyboardF.size.height);
         
     }];
-    }
+}
 
 
 /**
@@ -127,7 +212,16 @@
  */
 -(void)keyboardWillHide:(NSNotification *)note
 {
-    IWLog(@"keyboardWillHide---%@", note.userInfo);
+    
+    // 1.取出键盘弹出的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 2.执行动画
+    [UIView animateWithDuration:duration animations:^{
+        self.toolbar.transform = CGAffineTransformIdentity;
+        
+    }];
+
 }
 
 // 编辑框可以上下滚动
@@ -140,7 +234,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-   // [self.textView becomeFirstResponder];
+    [self.textView becomeFirstResponder];
 }
 
 /**

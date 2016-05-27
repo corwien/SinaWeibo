@@ -76,7 +76,7 @@
 // 设置文本框颜色
 -(void)setPlaceholderColor:(UIColor *)placeholderColor
 {
-    _placeholder = placeholderColor;
+    _placeholderColor = placeholderColor;
     self.placeholderLabel.textColor = placeholderColor;
 }
 
@@ -96,7 +96,7 @@
 
 -(void)dealloc
 {
-    // [NSNotificationCenter removeObserve:self];
+     // [NSNotificationCenter removeObserve:self];
 }
 
 @end
