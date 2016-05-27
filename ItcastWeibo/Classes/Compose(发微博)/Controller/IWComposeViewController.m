@@ -54,16 +54,7 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     
     // 设置frame
-    /*
-    CGFloat imageViewH = 44;
-    CGFloat imageViewW = self.view.frame.size.width;  // 宽度为view的宽度
-    CGFloat imageViewX = 0;   // 位置，在最左边
-    CGFloat imageViewY = self.view.frame.size.height;
-    imageView.frame = CGRectMake(imageViewX, imageViewY, imageViewW, imageViewH);
-    */
-    // toolbar的父控件是textview还是控制器？经过分析新浪微博的toolbar，当键盘消失时，toolbar永远在view的最底部
-    // 所以，我们确定其父控件为控制器
-     imageView.frame = CGRectMake(5, 80, 60, 60);
+    imageView.frame = CGRectMake(5, 80, 60, 60);
     [self.textView addSubview:imageView];
     
     // 赋值属性
@@ -80,7 +71,6 @@
             break;
             
         case IWComposeToolbarButtonTypePicture: // 相册
-            NSLog(@"jinqule");
             [self openPhotoLibarary];
             break;
             
@@ -105,7 +95,7 @@
  *  打开相册
  */
 -(void)openPhotoLibarary{
-    NSLog(@"打开相册");
+    // NSLog(@"打开相册");
     UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
     ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     ipc.delegate = self;

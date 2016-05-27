@@ -54,7 +54,7 @@
  */
 -(void)buttonClick:(UIButton *)button{
     
-    NSLog(@"%d", button.tag);
+    // NSLog(@"%d", button.tag);
     
     if([self.delegate respondsToSelector:@selector(composeToolbar:didClickedButton:)])
     {
