@@ -260,10 +260,83 @@
    // [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 /**
- *  发微博
+ *  （新）发微博（纯文字+有图片博客）
  */
 - (void)send
+{
+    if(self.imageView.image) // 有图片
+    {
+        [self sendWithImage];
+        
+    }
+    else  // 无图片
+    {
+        [self sendWithoutImage];
+        
+    }
+    
+}
+
+/**
+ *  发有图片微博
+ */
+- (void)sendWithImage
+{
+    // AFNetworking\AFN
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    // 发送内容
+    params[@"status"] = self.textView.text;
+    
+    // 根据之前封装的账号工具类IWAccountTool，登陆授权的账号信息被保存在本地，然后通过账号属性获取access_token
+    params[@"access_token"] = [IWAccountTool account].access_token;
+    
+    // 上传图片（是否压缩,压缩质量为0.6，原图为1.0）
+    // params[@"pic"] = UIImageJPEGRepresentation(self.imageView.image, 0.6);
+    
+    
+    // 3.发送请求
+    /*
+    [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params
+      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          [MBProgressHUD showSuccess:@"恭喜，发送成功"];
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          // 隐藏提醒框
+          [MBProgressHUD showError:@"抱歉，发送失败"];
+      }];
+     */
+    [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) { // 在发送请求之前调用这个block
+        
+        //必须在这里说明需要上传哪些文件
+        NSData *data = UIImageJPEGRepresentation(self.imageView.image, 0.6);
+        [formData appendPartWithFileData:data name:@"pic" fileName:@"text.jpg" mimeType:@"image/jpeg"];
+        
+        
+    }  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [MBProgressHUD showSuccess:@"恭喜，发送成功"];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // 隐藏提醒框
+        [MBProgressHUD showError:@"抱歉，发送失败"];
+    }];
+    
+    // 4.关闭控制器。当用户点击发送微博按钮后，需要将发微博界面关掉，因为发微博有时可能需要很长时间
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+
+    
+}
+
+/**
+ *  发无图片微博
+ */
+- (void)sendWithoutImage
 {
     // AFNetworking\AFN
     // 1.创建请求管理对象
