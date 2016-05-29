@@ -18,12 +18,15 @@
 #import "IWAccountTool.h"
 #import "MBProgressHUD+MJ.h"
 #import "IWComposeToolbar.h"
+#import "IWComposePhotosView.h"
+
 
 
 @interface IWComposeViewController ()<UITextViewDelegate,IWComposeToolbarDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) IWTextView *textView;
 @property (nonatomic, weak)IWComposeToolbar *toolbar;
-@property (nonatomic, weak)UIImageView *imageView;
+// @property (nonatomic, weak)UIImageView *imageView;   // 不再是一个imageView,而是一个整体
+@property(nonatomic, weak)IWComposePhotosView *photosView;
 @end
 
 @implementation IWComposeViewController
@@ -43,22 +46,30 @@
     [self setupToolbar];
     
     // 添加imageView (初始化）
-    [self setupImageView];
+    [self setupPhotosView];
 }
 
 /**
- *  添加imageView
+ *  添加photosView
  */
--(void)setupImageView
+-(void)setupPhotosView
 {
-    UIImageView *imageView = [[UIImageView alloc] init];
+    // UIImageView *imageView = [[UIImageView alloc] init];
+    IWComposePhotosView *photosView = [[IWComposePhotosView alloc] init];
+    
+    // 添加背景色
+    photosView.backgroundColor = [UIColor redColor];
     
     // 设置frame
-    imageView.frame = CGRectMake(5, 80, 60, 60);
-    [self.textView addSubview:imageView];
+    CGFloat photosW = self.textView.frame.size.width;
+    CGFloat photosY = 80;
+    CGFloat photosH = self.textView.frame.size.height;
+    
+    photosView.frame = CGRectMake(0, photosY, photosW, photosH );
+    [self.textView addSubview:photosView];
     
     // 赋值属性
-    self.imageView = imageView;
+    self.photosView = photosView;
     
 }
 
@@ -102,9 +113,7 @@
     [self presentViewController:ipc animated:YES completion:nil];
 }
 
-/**
- * 图片选择控制器的代理
- */
+#pragma mark - 图片选择控制器的代理
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // 1.销毁picker控制器
@@ -114,8 +123,9 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     // 3.把用户选择的图片显示在发微博编辑框内
-    self.imageView.image = image;
-    NSLog(@"%@", info);
+     // self.imageView.image = image;
+     // NSLog(@"%@", info);
+    [self.photosView addImage:image];
 }
 
 /**
@@ -266,7 +276,7 @@
  */
 - (void)send
 {
-    if(self.imageView.image) // 有图片
+    if(self.photosView.totalImages.count) // 有图片
     {
         [self sendWithImage];
         
@@ -278,6 +288,7 @@
     }
     
 }
+
 
 /**
  *  发有图片微博
@@ -313,10 +324,14 @@
      */
     [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) { // 在发送请求之前调用这个block
         
-        //必须在这里说明需要上传哪些文件
-        NSData *data = UIImageJPEGRepresentation(self.imageView.image, 0.6);
-        [formData appendPartWithFileData:data name:@"pic" fileName:@"text.jpg" mimeType:@"image/jpeg"];
         
+        //必须在这里说明需要上传哪些文件
+        NSArray *images = [self.photosView totalImages];
+        for(UIImage *image in images){
+            NSData *data = UIImageJPEGRepresentation(image, 0.6);
+            [formData appendPartWithFileData:data name:@"pic" fileName:@"text.jpg" mimeType:@"image/jpeg"];
+            
+        }
         
     }  success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [MBProgressHUD showSuccess:@"恭喜，发送成功"];
