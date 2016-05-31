@@ -39,4 +39,24 @@
 
     }];
 }
+
+
++ (void)getWithURL:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
+{
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.发送请求
+    [mgr GET:url parameters:params
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         if (success) {
+             success(responseObject);
+         }
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         if (failure) {
+             failure(error);
+         }
+     }];
+}
+
 @end
