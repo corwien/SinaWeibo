@@ -10,6 +10,7 @@
 		043B2D1A1CE80DB9002D0EB2 /* IWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B2D191CE80DB9002D0EB2 /* IWComposeToolbar.m */; };
 		0491C7281CFB45F200E82998 /* IWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491C7271CFB45F200E82998 /* IWHttpTool.m */; };
 		04B7B32B1CF965AB004399FB /* IWComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7B32A1CF965AB004399FB /* IWComposePhotosView.m */; };
+		04F639E11CFDDDC60082B975 /* IWFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F639E01CFDDDC60082B975 /* IWFormData.m */; };
 		080883E119205BD900A6840F /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 080883D519205BD900A6840F /* MJPhoto.m */; };
 		080883E219205BD900A6840F /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 080883D619205BD900A6840F /* MJPhotoBrowser.bundle */; };
 		080883E319205BD900A6840F /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 080883D819205BD900A6840F /* MJPhotoBrowser.m */; };
@@ -138,6 +139,8 @@
 		0491C7271CFB45F200E82998 /* IWHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWHttpTool.m; sourceTree = "<group>"; };
 		04B7B3291CF965AB004399FB /* IWComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWComposePhotosView.h; sourceTree = "<group>"; };
 		04B7B32A1CF965AB004399FB /* IWComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWComposePhotosView.m; sourceTree = "<group>"; };
+		04F639DF1CFDDDC60082B975 /* IWFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWFormData.h; sourceTree = "<group>"; };
+		04F639E01CFDDDC60082B975 /* IWFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWFormData.m; sourceTree = "<group>"; };
 		080883D419205BD900A6840F /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		080883D519205BD900A6840F /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
 		080883D619205BD900A6840F /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 			children = (
 				0491C7261CFB45F200E82998 /* IWHttpTool.h */,
 				0491C7271CFB45F200E82998 /* IWHttpTool.m */,
+				04F639DF1CFDDDC60082B975 /* IWFormData.h */,
+				04F639E01CFDDDC60082B975 /* IWFormData.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1066,6 +1071,7 @@
 				0863B971191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m in Sources */,
 				0863B970191B1DAC00B6BA5F /* AFHTTPRequestOperation.m in Sources */,
 				0863BA07191B7C1D00B6BA5F /* NSObject+MJMember.m in Sources */,
+				04F639E11CFDDDC60082B975 /* IWFormData.m in Sources */,
 				0863B983191B305100B6BA5F /* IWAccountTool.m in Sources */,
 				0863B9E0191B6E5B00B6BA5F /* UIButton+WebCache.m in Sources */,
 				0829D8FE19173977005E4B1D /* IWMessageViewController.m in Sources */,
