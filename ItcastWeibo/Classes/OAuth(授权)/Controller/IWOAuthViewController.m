@@ -108,7 +108,7 @@
     params[@"redirect_uri"] = IWRedirectURI;
     
     // 2.发送请求,请求成功后，需要调用这整个successBlock
-    [IWHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:params success:^(id json)
+    [IWHttpTool getWithURL:@"https://api.weibo.com/oauth2/access_token" params:params success:^(id json)
     {
         // 4.先将字典转为模型
         IWAccount *account = [IWAccount accountWithDict:json];

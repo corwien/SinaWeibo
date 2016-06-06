@@ -19,6 +19,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "IWComposeToolbar.h"
 #import "IWComposePhotosView.h"
+#import "IWHttpTool.h"
 
 
 
@@ -289,11 +290,50 @@
     
 }
 
-
 /**
- *  发有图片微博
+ *  发有图片的微博
  */
 - (void)sendWithImage
+{
+    // 1.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"status"] = self.textView.text;
+    params[@"access_token"] = [IWAccountTool account].access_token;
+    
+    // 2.封装文件参数
+    NSMutableArray *formDataArray = [NSMutableArray array];
+    NSArray *images = [self.photosView totalImages];
+    for (UIImage *image in images) {
+        IWFormData *formData = [[IWFormData alloc] init];
+        formData.data = UIImageJPEGRepresentation(image, 0.000001);
+        formData.name = @"pic";
+        formData.mimeType = @"image/jpeg";
+        formData.filename = @"";
+        [formDataArray addObject:formData];
+    }
+    
+    // 3.发送请求
+    [IWHttpTool postWithURL:@"https://upload.api.weibo.com/2/statuses/upload.json" params:params formDataArray:formDataArray success:^(id json) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+    }];
+    
+    // 4.关闭控制器。当用户点击发送微博按钮后，需要将发微博界面关掉，因为发微博有时可能需要很长时间
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+    
+    
+}
+
+
+/**
+ *  发有图片微博(旧的接口，已被上边新的替换）[2016-06-06]
+ */
+
+/*
+- (void)sendWithImageOld
 {
     // AFNetworking\AFN
     // 1.创建请求管理对象
@@ -313,15 +353,7 @@
     
     
     // 3.发送请求
-    /*
-    [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params
-      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          [MBProgressHUD showSuccess:@"恭喜，发送成功"];
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          // 隐藏提醒框
-          [MBProgressHUD showError:@"抱歉，发送失败"];
-      }];
-     */
+  
     [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) { // 在发送请求之前调用这个block
         
         
@@ -342,17 +374,32 @@
     
     // 4.关闭控制器。当用户点击发送微博按钮后，需要将发微博界面关掉，因为发微博有时可能需要很长时间
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-
+ 
     
 }
+ */
+
 
 /**
  *  发无图片微博
  */
 - (void)sendWithoutImage
 {
+    
+    // 1.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"status"] = self.textView.text;
+    params[@"access_token"] = [IWAccountTool account].access_token;
+    
+    // 2.发送请求
+    [IWHttpTool getWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+    }];
+
+    
+    /*
     // AFNetworking\AFN
     // 1.创建请求管理对象
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
@@ -378,6 +425,7 @@
     
     // 4.关闭控制器。当用户点击发送微博按钮后，需要将发微博界面关掉，因为发微博有时可能需要很长时间
     [self dismissViewControllerAnimated:YES completion:nil];
+     */
     
     
 }

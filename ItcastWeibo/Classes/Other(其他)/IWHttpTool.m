@@ -8,7 +8,6 @@
 
 #import "IWHttpTool.h"
 #import "AFNetworking.h"
-#import "IWFormData.h"
 
 @implementation IWHttpTool
 
@@ -58,5 +57,11 @@
          }
      }];
 }
+@end
+
+/**
+ *  用来封装文件数据的模型
+ */
+@implementation IWFormData
 
 @end
