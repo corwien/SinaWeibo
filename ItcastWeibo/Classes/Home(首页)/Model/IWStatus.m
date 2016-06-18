@@ -51,10 +51,9 @@
 
 - (void)setSource:(NSString *)source
 {
-    // int loc = [source rangeOfString:@">"].location + 1;
-    // int length = [source rangeOfString:@"</"].location - loc;
-    // source = [source substringWithRange:NSMakeRange(loc, length)];
-    source = [source substringWithRange:NSMakeRange(5, 10)];
+    int loc = [source rangeOfString:@">"].location + 1;
+    int length = [source rangeOfString:@"</"].location - loc;
+    source = [source substringWithRange:NSMakeRange(loc, length)];
     
     _source = [NSString stringWithFormat:@"来自%@", source];
 }
