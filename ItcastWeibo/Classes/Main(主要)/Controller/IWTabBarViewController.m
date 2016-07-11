@@ -15,12 +15,23 @@
 #import "UIImage+MJ.h"
 #import "IWTabBar.h"
 #import "IWComposeViewController.h"
+#import "IWUserTool.h"
+#import "IWAccountTool.h"
+#import "IWAccount.h"
+
 
 @interface IWTabBarViewController () <IWTabBarDelegate>
 /**
  *  自定义的tabbar
  */
 @property (nonatomic, weak) IWTabBar *customTabBar;
+
+
+@property (nonatomic, strong)IWHomeViewController *home;
+@property (nonatomic, strong)IWMessageViewController *message;
+@property (nonatomic, strong)IWDiscoverViewController *discover;
+@property (nonatomic, strong)IWMeViewController *me;
+
 @end
 
 @implementation IWTabBarViewController
@@ -34,6 +45,48 @@
     
     // 初始化所有的子控制器
     [self setupAllChildViewControllers];
+    
+    // [self checkUnreadCount];
+    
+    // 定时检查未读数
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+    
+    // 将定时器改为子线程
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+// 定时检查未读数
+-(void)checkUnreadCount
+{
+    
+    
+    // 1.请求参数
+    IWUserUnreadCountParam *param = [IWUserUnreadCountParam param];
+    param.uid = @([IWAccountTool account].uid);
+    
+    // 2.发送请求
+    [IWUserTool userUnreadCountWithParam:param success:^(IWUserUnreadCountResutl *result)
+    {
+        // 3.设置badgeValue
+        // 3.1首页
+        self.home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.status];
+        
+        
+        
+        self.message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.messageCount];
+        
+        self.me.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.follower];
+        
+        // 4.设置图标右上角的数字
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.totalCount;
+        
+       
+    } failure:^(NSError *error)
+    {
+        
+    }];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,6 +122,11 @@
 - (void)tabBar:(IWTabBar *)tabBar didSelectedButtonFrom:(int)from to:(int)to
 {
     self.selectedIndex = to;
+    
+    if(to == 0){ // 点击了首页
+        [self.home refresh];
+        
+    }
 }
 
 /**
@@ -89,18 +147,22 @@
     // 1.首页
     IWHomeViewController *home = [[IWHomeViewController alloc] init];
     [self setupChildViewController:home title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
+    self.home = home;
     
     // 2.消息
     IWMessageViewController *message = [[IWMessageViewController alloc] init];
     [self setupChildViewController:message title:@"消息" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
+    self.message = message;
     
     // 3.广场
     IWDiscoverViewController *discover = [[IWDiscoverViewController alloc] init];
     [self setupChildViewController:discover title:@"广场" imageName:@"tabbar_discover" selectedImageName:@"tabbar_discover_selected"];
+    self.discover = discover;
     
     // 4.我
     IWMeViewController *me = [[IWMeViewController alloc] init];
     [self setupChildViewController:me title:@"我" imageName:@"tabbar_profile" selectedImageName:@"tabbar_profile_selected"];
+    self.me = me;
 }
 
 /**

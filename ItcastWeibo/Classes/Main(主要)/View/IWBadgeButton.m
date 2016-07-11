@@ -28,7 +28,8 @@
 //    _badgeValue = badgeValue;
     _badgeValue = [badgeValue copy];
     
-    if (badgeValue) {
+    // badgeValue 有值，并且大于0时显示
+    if (badgeValue && [badgeValue intValue] != 0) {
         self.hidden = NO;
         // 设置文字
         [self setTitle:badgeValue forState:UIControlStateNormal];

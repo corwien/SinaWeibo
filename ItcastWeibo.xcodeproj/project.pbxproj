@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04224DE81D15A0AB00DB36A9 /* IWUserUnreadCountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 04224DE71D15A0AB00DB36A9 /* IWUserUnreadCountParam.m */; };
+		04224DEB1D15A33B00DB36A9 /* IWUserUnreadCountResutl.m in Sources */ = {isa = PBXBuildFile; fileRef = 04224DEA1D15A33B00DB36A9 /* IWUserUnreadCountResutl.m */; };
+		042681BE1D30B77A0015E35D /* IWStatusCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 042681BD1D30B77A0015E35D /* IWStatusCacheTool.m */; };
 		048CC37B1D10C16000FEDE97 /* IWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048CC3531D10C16000FEDE97 /* IWHomeViewController.m */; };
 		048CC37C1D10C16000FEDE97 /* IWHomeStatusesParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 048CC3571D10C16000FEDE97 /* IWHomeStatusesParam.m */; };
 		048CC37D1D10C16000FEDE97 /* IWHomeStatusesResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 048CC3591D10C16000FEDE97 /* IWHomeStatusesResult.m */; };
@@ -32,6 +35,12 @@
 		048CC3A51D10C47A00FEDE97 /* IWComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048CC39E1D10C47A00FEDE97 /* IWComposeToolbar.m */; };
 		048CC3A61D10C47A00FEDE97 /* IWTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048CC3A01D10C47A00FEDE97 /* IWTextView.m */; };
 		04B5EDD71D1503DC00A8085D /* IWHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B5EDD61D1503DC00A8085D /* IWHttpTool.m */; };
+		04B7988B1D3148E300373CD0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B798811D3148E300373CD0 /* FMDatabase.m */; };
+		04B7988C1D3148E300373CD0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B798831D3148E300373CD0 /* FMDatabaseAdditions.m */; };
+		04B7988D1D3148E300373CD0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B798851D3148E300373CD0 /* FMDatabasePool.m */; };
+		04B7988E1D3148E300373CD0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B798871D3148E300373CD0 /* FMDatabaseQueue.m */; };
+		04B7988F1D3148E300373CD0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B7988A1D3148E300373CD0 /* FMResultSet.m */; };
+		04B798911D31674A00373CD0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B798901D31674A00373CD0 /* libsqlite3.dylib */; };
 		04CB0A3D1D10CCE9000EA950 /* IWBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB0A3C1D10CCE9000EA950 /* IWBaseParam.m */; };
 		080883E119205BD900A6840F /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 080883D519205BD900A6840F /* MJPhoto.m */; };
 		080883E219205BD900A6840F /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 080883D619205BD900A6840F /* MJPhotoBrowser.bundle */; };
@@ -141,6 +150,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04224DE61D15A0AB00DB36A9 /* IWUserUnreadCountParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWUserUnreadCountParam.h; sourceTree = "<group>"; };
+		04224DE71D15A0AB00DB36A9 /* IWUserUnreadCountParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWUserUnreadCountParam.m; sourceTree = "<group>"; };
+		04224DE91D15A33B00DB36A9 /* IWUserUnreadCountResutl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWUserUnreadCountResutl.h; sourceTree = "<group>"; };
+		04224DEA1D15A33B00DB36A9 /* IWUserUnreadCountResutl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWUserUnreadCountResutl.m; sourceTree = "<group>"; };
+		042681BC1D30B77A0015E35D /* IWStatusCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWStatusCacheTool.h; sourceTree = "<group>"; };
+		042681BD1D30B77A0015E35D /* IWStatusCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWStatusCacheTool.m; sourceTree = "<group>"; };
 		048CC3521D10C16000FEDE97 /* IWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWHomeViewController.h; sourceTree = "<group>"; };
 		048CC3531D10C16000FEDE97 /* IWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWHomeViewController.m; sourceTree = "<group>"; };
 		048CC3561D10C16000FEDE97 /* IWHomeStatusesParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWHomeStatusesParam.h; sourceTree = "<group>"; };
@@ -191,6 +206,18 @@
 		048CC3A01D10C47A00FEDE97 /* IWTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWTextView.m; sourceTree = "<group>"; };
 		04B5EDD51D1503DC00A8085D /* IWHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWHttpTool.h; sourceTree = "<group>"; };
 		04B5EDD61D1503DC00A8085D /* IWHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWHttpTool.m; sourceTree = "<group>"; };
+		04B798801D3148E300373CD0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		04B798811D3148E300373CD0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		04B798821D3148E300373CD0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		04B798831D3148E300373CD0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		04B798841D3148E300373CD0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		04B798851D3148E300373CD0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		04B798861D3148E300373CD0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		04B798871D3148E300373CD0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		04B798881D3148E300373CD0 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		04B798891D3148E300373CD0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		04B7988A1D3148E300373CD0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		04B798901D31674A00373CD0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		04CB0A3B1D10CCE9000EA950 /* IWBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWBaseParam.h; sourceTree = "<group>"; };
 		04CB0A3C1D10CCE9000EA950 /* IWBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWBaseParam.m; sourceTree = "<group>"; };
 		080883D419205BD900A6840F /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
@@ -354,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B798911D31674A00373CD0 /* libsqlite3.dylib in Frameworks */,
 				0829D89819172DBE005E4B1D /* CoreGraphics.framework in Frameworks */,
 				0829D89A19172DBE005E4B1D /* UIKit.framework in Frameworks */,
 				0829D89619172DBE005E4B1D /* Foundation.framework in Frameworks */,
@@ -381,6 +409,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04224DE51D15A02100DB36A9 /* UserUnreadCount */ = {
+			isa = PBXGroup;
+			children = (
+				04224DE61D15A0AB00DB36A9 /* IWUserUnreadCountParam.h */,
+				04224DE71D15A0AB00DB36A9 /* IWUserUnreadCountParam.m */,
+				04224DE91D15A33B00DB36A9 /* IWUserUnreadCountResutl.h */,
+				04224DEA1D15A33B00DB36A9 /* IWUserUnreadCountResutl.m */,
+			);
+			path = UserUnreadCount;
+			sourceTree = "<group>";
+		};
 		048CC3501D10C16000FEDE97 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +443,7 @@
 		048CC3541D10C16000FEDE97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04224DE51D15A02100DB36A9 /* UserUnreadCount */,
 				048CC3551D10C16000FEDE97 /* HomeStatuses */,
 				048CC35A1D10C16000FEDE97 /* IWPhoto.h */,
 				048CC35B1D10C16000FEDE97 /* IWPhoto.m */,
@@ -447,6 +487,8 @@
 				048CC3691D10C16000FEDE97 /* IWStatusTool.m */,
 				048CC36A1D10C16000FEDE97 /* IWUserTool.h */,
 				048CC36B1D10C16000FEDE97 /* IWUserTool.m */,
+				042681BC1D30B77A0015E35D /* IWStatusCacheTool.h */,
+				042681BD1D30B77A0015E35D /* IWStatusCacheTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -524,6 +566,24 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		04B7987F1D3148E300373CD0 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				04B798801D3148E300373CD0 /* FMDatabase.h */,
+				04B798811D3148E300373CD0 /* FMDatabase.m */,
+				04B798821D3148E300373CD0 /* FMDatabaseAdditions.h */,
+				04B798831D3148E300373CD0 /* FMDatabaseAdditions.m */,
+				04B798841D3148E300373CD0 /* FMDatabasePool.h */,
+				04B798851D3148E300373CD0 /* FMDatabasePool.m */,
+				04B798861D3148E300373CD0 /* FMDatabaseQueue.h */,
+				04B798871D3148E300373CD0 /* FMDatabaseQueue.m */,
+				04B798881D3148E300373CD0 /* FMDB.h */,
+				04B798891D3148E300373CD0 /* FMResultSet.h */,
+				04B7988A1D3148E300373CD0 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		04CB0A3A1D10CCE9000EA950 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +638,7 @@
 		0829D89419172DBE005E4B1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04B798901D31674A00373CD0 /* libsqlite3.dylib */,
 				0829D89519172DBE005E4B1D /* Foundation.framework */,
 				0829D89719172DBE005E4B1D /* CoreGraphics.framework */,
 				0829D89919172DBE005E4B1D /* UIKit.framework */,
@@ -837,6 +898,7 @@
 		0863B95B191B1DAC00B6BA5F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04B7987F1D3148E300373CD0 /* fmdb */,
 				08F5B3021920B1350078735A /* MJRefresh */,
 				080883D319205BD900A6840F /* MJPhotoBrowser */,
 				0863B9EB191B7C1D00B6BA5F /* MJExtension */,
@@ -1141,11 +1203,13 @@
 				086E63931918803100DDB83F /* UIBarButtonItem+MJ.m in Sources */,
 				0863B98A191B36AC00B6BA5F /* MBProgressHUD+MJ.m in Sources */,
 				08F5B3111920B1350078735A /* MJRefreshHeaderView.m in Sources */,
+				04B7988E1D3148E300373CD0 /* FMDatabaseQueue.m in Sources */,
 				0829D90A19173FFE005E4B1D /* IWTabBar.m in Sources */,
 				048CC3A31D10C47A00FEDE97 /* IWSendStatusResult.m in Sources */,
 				048CC3801D10C16000FEDE97 /* IWStatusFrame.m in Sources */,
 				08F5B3101920B1350078735A /* MJRefreshFooterView.m in Sources */,
 				0863B974191B1DAC00B6BA5F /* AFSecurityPolicy.m in Sources */,
+				04B7988D1D3148E300373CD0 /* FMDatabasePool.m in Sources */,
 				0863B9FF191B7C1D00B6BA5F /* MJArgument.m in Sources */,
 				0863B971191B1DAC00B6BA5F /* AFHTTPRequestOperationManager.m in Sources */,
 				0863B970191B1DAC00B6BA5F /* AFHTTPRequestOperation.m in Sources */,
@@ -1155,11 +1219,13 @@
 				048CC3891D10C16000FEDE97 /* IWStatusCell.m in Sources */,
 				048CC3811D10C16000FEDE97 /* IWUser.m in Sources */,
 				0829D8FE19173977005E4B1D /* IWMessageViewController.m in Sources */,
+				04224DEB1D15A33B00DB36A9 /* IWUserUnreadCountResutl.m in Sources */,
 				0863BA00191B7C1D00B6BA5F /* MJIvar.m in Sources */,
 				0829D8FD19173977005E4B1D /* IWMeViewController.m in Sources */,
 				08CE62781917724F002DA6BF /* IWTabBarButton.m in Sources */,
 				0863B9E1191B6E5B00B6BA5F /* UIImage+GIF.m in Sources */,
 				0863B9DF191B6E5B00B6BA5F /* SDWebImagePrefetcher.m in Sources */,
+				04B7988C1D3148E300373CD0 /* FMDatabaseAdditions.m in Sources */,
 				080883E419205BD900A6840F /* MJPhotoLoadingView.m in Sources */,
 				0829D90719173CFB005E4B1D /* UIImage+MJ.m in Sources */,
 				048CC3A11D10C47A00FEDE97 /* IWComposeViewController.m in Sources */,
@@ -1185,6 +1251,7 @@
 				0863B972191B1DAC00B6BA5F /* AFHTTPSessionManager.m in Sources */,
 				0829D8FA19173977005E4B1D /* IWDiscoverViewController.m in Sources */,
 				08CE627B191788E1002DA6BF /* IWBadgeButton.m in Sources */,
+				04224DE81D15A0AB00DB36A9 /* IWUserUnreadCountParam.m in Sources */,
 				0863B975191B1DAC00B6BA5F /* AFURLConnectionOperation.m in Sources */,
 				0863B97F191B2EB100B6BA5F /* IWWeiboTool.m in Sources */,
 				048CC37F1D10C16000FEDE97 /* IWStatus.m in Sources */,
@@ -1194,6 +1261,7 @@
 				048CC3A41D10C47A00FEDE97 /* IWComposePhotosView.m in Sources */,
 				0863B976191B1DAC00B6BA5F /* AFURLRequestSerialization.m in Sources */,
 				04CB0A3D1D10CCE9000EA950 /* IWBaseParam.m in Sources */,
+				04B7988B1D3148E300373CD0 /* FMDatabase.m in Sources */,
 				0863B978191B1DAC00B6BA5F /* AFURLSessionManager.m in Sources */,
 				0863B9D7191B6E5B00B6BA5F /* MKAnnotationView+WebCache.m in Sources */,
 				048CC3821D10C16000FEDE97 /* IWUserInfoParam.m in Sources */,
@@ -1220,6 +1288,7 @@
 				048CC3A51D10C47A00FEDE97 /* IWComposeToolbar.m in Sources */,
 				048CC37D1D10C16000FEDE97 /* IWHomeStatusesResult.m in Sources */,
 				080883EA19205D4400A6840F /* SDWebImageManager+MJ.m in Sources */,
+				042681BE1D30B77A0015E35D /* IWStatusCacheTool.m in Sources */,
 				0863BA03191B7C1D00B6BA5F /* MJType.m in Sources */,
 				048CC37B1D10C16000FEDE97 /* IWHomeViewController.m in Sources */,
 				080883E319205BD900A6840F /* MJPhotoBrowser.m in Sources */,
@@ -1227,6 +1296,7 @@
 				048CC3831D10C16000FEDE97 /* IWUserInfoResult.m in Sources */,
 				048CC3871D10C16000FEDE97 /* IWPhotoView.m in Sources */,
 				048CC3861D10C16000FEDE97 /* IWPhotosView.m in Sources */,
+				04B7988F1D3148E300373CD0 /* FMResultSet.m in Sources */,
 				0863B9D9191B6E5B00B6BA5F /* SDImageCache.m in Sources */,
 				08F5B30F1920B1350078735A /* MJRefreshConst.m in Sources */,
 			);
@@ -1293,7 +1363,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1331,7 +1402,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1342,6 +1414,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1352,6 +1425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ItcastWeibo/Classes/Other(其他)/ItcastWeibo-Prefix.pch";
 				INFOPLIST_FILE = "ItcastWeibo/ItcastWeibo-Info.plist";
@@ -1366,6 +1440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ItcastWeibo/Classes/Other(其他)/ItcastWeibo-Prefix.pch";
 				INFOPLIST_FILE = "ItcastWeibo/ItcastWeibo-Info.plist";

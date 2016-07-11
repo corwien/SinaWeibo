@@ -115,6 +115,18 @@
     }
 }
 
+-(void)refresh
+{
+    if([self.tabBarItem.badgeValue intValue] != 0)
+    {
+        [self.header beginRefreshing];
+        
+    }
+    
+}
+
+
+
 /**
  *  发送请求加载更多的微博数据
  */
@@ -158,6 +170,10 @@
  */
 - (void)loadNewData
 {
+    // 0.清除提醒数据
+    self.tabBarItem.badgeValue = nil;
+    
+    
     // 1.封装请求参数
     IWHomeStatusesParam *param = [IWHomeStatusesParam param];
     if (self.statusFrames.count) {
